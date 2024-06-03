@@ -1,0 +1,66 @@
+<style type="text/css">
+  .CT_Box {
+    background-color: #fffeeb;
+  }
+</style>
+<div class="container">
+  <h2>Rate Us!</h2>
+  <div id="ratingForm">
+    <div>
+      <label for="rating">Rate us: </label>
+      <input type="radio" id="rating1" name="rating" value="1" />
+      <label for="rating1">1</label>
+      <input type="radio" id="rating2" name="rating" value="2" />
+      <label for="rating2">2</label>
+      <input type="radio" id="rating3" name="rating" value="3" />
+      <label for="rating3">3</label>
+      <input type="radio" id="rating4" name="rating" value="4" />
+      <label for="rating4">4</label>
+      <input type="radio" id="rating5" name="rating" value="5" />
+      <label for="rating5">5</label>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div>
+      <label for="feedback">Feedback:</label>
+      <textarea
+        id="feedback"
+        name="feedback"
+        placeholder="Your feedback..."
+      ></textarea>
+    </div>
+    <br />
+    <br />
+    <button id="submit" onclick="onSubmitClick()">Submit</button>
+  </div>
+</div>
+
+<script>
+  function onSubmitClick() {
+    // Get the selected rating
+    var rating = document.querySelector('input[name="rating"]:checked');
+    if (!rating) {
+      alert("Please select a rating!");
+      return;
+    }
+    rating = rating.value;
+
+    // Get the feedback
+    var feedback = document.getElementById("feedback").value;
+
+    // You can perform further actions here, like sending the rating and feedback to a server
+
+    // For demonstration, let's just log the rating and feedback to console
+    console.log("Rating:", rating);
+    console.log("Feedback:", feedback);
+
+    console.log("Others");
+    console.log(window.parent.clevertap.event.push);
+
+    window.parent.clevertap.event.push("TEST_FEEDBACK_RATING_SUBMITTED", {
+      rating,
+      feedback,
+    });
+  }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Feedback Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Emoji Feedback Form</h1>
+      <form id="feedback-form">
+        <div class="question">
+          <label for="overall-experience">1. Overall Experience:</label>
+          <div class="stars" data-question="overall-experience">
+            <span class="star" data-value="1">☆</span>
+            <span class="star" data-value="2">☆</span>
+            <span class="star" data-value="3">☆</span>
+            <span class="star" data-value="4">☆</span>
+            <span class="star" data-value="5">☆</span>
+          </div>
+          <input
+            type="hidden"
+            id="overall-experience"
+            name="overall-experience"
+            value=""
+          />
+        </div>
+        <!-- Add more questions here -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

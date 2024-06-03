@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @font-face {
+        font-family: Indivisible;
+        font-weight: 300;
+        src: url("https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-Light.ttf")
+          format("truetype");
+      }
+
+      @font-face {
+        font-family: Indivisible;
+        font-weight: 400;
+        src: url("https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-Regular.ttf")
+          format("truetype");
+      }
+
+      @font-face {
+        font-family: Indivisible;
+        font-weight: 500;
+        src: url("https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-Medium.ttf")
+          format("truetype");
+      }
+
+      @font-face {
+        font-family: Indivisible;
+        font-weight: 600;
+        src: url("https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-SemiBold.ttf")
+          format("truetype");
+      }
+
+      @font-face {
+        font-family: Indivisible;
+        font-weight: 700;
+        src: url("https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-Bold.ttf")
+          format("truetype");
+      }
+      .feedback {
+        /* width: 370px; */
+        width: fit-content;
+        box-shadow: 0px 30px 60px 0px #60606040;
+        background: #ffffff;
+      }
+      .feedbackHeader {
+        /* width: 480px; */
+        height: 68px;
+        top: 458px;
+        left: 928px;
+        gap: 0px;
+        opacity: 0px;
+        background: #f5f5f5;
+        padding-left: 24px;
+        padding-right: 24px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .feedbackHeaderPtag {
+        font-family: Indivisible;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 28px;
+        text-align: left;
+      }
+      .cross {
+        cursor: pointer;
+      }
+      .feedbackBody {
+      }
+      .feedbackBodyP1 {
+        font-family: Indivisible;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        margin-top: 24px;
+        margin-left: 24px;
+      }
+      .feedbackBodyRating {
+        /* width: 369.1px; */
+        height: 71.15px;
+        top: 590px;
+        left: 952px;
+        gap: 0px;
+        opacity: 0px;
+        display: flex;
+        gap: 25px;
+        margin-top: 16px;
+        margin-left: 24px;
+        margin-right: 24px;
+      }
+
+      .emojiContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        gap: 10.3px;
+      }
+      .ratingEmoji {
+        cursor: pointer;
+      }
+      .emojiContainer > p {
+        margin: 0;
+      }
+      .feedbackBodyP2 {
+        font-family: Indivisible;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        margin-top: 32.85px;
+        margin-left: 24px;
+        margin-bottom: 0;
+      }
+      .feedbackTextArea {
+        width: 340px;
+        height: 100px;
+        top: 734px;
+        left: 952px;
+        gap: 0px;
+        border: 1px 0px 0px 0px;
+        opacity: 0px;
+        margin-top: 16px;
+        margin-left: 24px;
+      }
+      .feedbackTextArea::placeholder {
+        font-family: Indivisible;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+        text-align: left;
+        color: #797979;
+        padding-left: 12px;
+        padding-top: 12px;
+      }
+
+      .buttonDiv {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: 24px;
+      }
+
+      .feedbackButton {
+        width: 236px;
+        height: 48px;
+        top: 866px;
+        left: 1050px;
+        gap: 0px;
+        border-radius: 68px;
+        opacity: 0px;
+        background: #003323;
+        color: white;
+        margin-top: 32px;
+        margin-bottom: 24px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="feedback">
+      <div class="feedbackHeader">
+        <p class="feedbackHeaderPtag">Help us improve One web for you</p>
+        <img
+          class="cross"
+          src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/lfqwxqx6anoerllchwns"
+          alt="cross"
+        />
+      </div>
+      <div class="feedbackBody">
+        <p class="feedbackBodyP1">
+          How would you like to rate your experience?
+        </p>
+        <div class="feedbackBodyRating">
+          <div class="emojiContainer">
+            <img
+              class="ratingEmoji"
+              id="poor"
+              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/mhtkokghcbznhjwgob8u"
+              alt="rating"
+            />
+            <p>Poor</p>
+          </div>
+          <div class="emojiContainer">
+            <img
+              class="ratingEmoji"
+              id="bad"
+              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/qttdpzu8xaeidvhphie3"
+              alt="rating"
+            />
+            <p>Bad</p>
+          </div>
+          <div class="emojiContainer">
+            <img
+              class="ratingEmoji"
+              id="average"
+              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/ylvuuvdzsokpwh5kgdyd"
+              alt="rating"
+            />
+            <p>Average</p>
+          </div>
+          <div class="emojiContainer">
+            <img
+              class="ratingEmoji"
+              id="good"
+              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/jaclav9ziml3exduidqe"
+              alt="rating"
+            />
+            <p>Good</p>
+          </div>
+          <div class="emojiContainer">
+            <img
+              class="ratingEmoji"
+              id="excellent"
+              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbba2svml4i2czincvu"
+              alt="rating"
+            />
+            <p>Excellent</p>
+          </div>
+        </div>
+        <p id="ratingMsg" class="feedbackBodyP2">
+          Tell us how can we improve your experience.
+        </p>
+        <textarea
+          id="feedback"
+          class="feedbackTextArea"
+          placeholder="Suggest a feature here"
+        ></textarea>
+        <div class="buttonDiv">
+          <button class="feedbackButton" onclick="onSubmit()">Submit</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // let isPoorSelected = false;
+      // let isBadSelected = false;
+      // let isAverageSelected = false;
+      // let isGoodSelected = false;
+      // let isExcellentSelected = false;
+
+      // const poorImgUrl = "./assets/poor.svg";
+      // const badImgUrl = "./assets/bad.svg";
+      // const avgImgUrl = "./assets/average.svg";
+      // const goodImgUrl = "./assets/good.svg";
+      // const excellentImgUrl = "./assets/excellent.svg";
+
+      const imgUrls = [
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/mhtkokghcbznhjwgob8u",
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/qttdpzu8xaeidvhphie3",
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/ylvuuvdzsokpwh5kgdyd",
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/jaclav9ziml3exduidqe",
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbba2svml4i2czincvu",
+      ];
+      const selectedImgUrls = [
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/czldxlmotbn0cocptth7",
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/lqqacdovgeqn4uge1zdc",
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbqoako3jaqtn3up0ml",
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/pxrzn5b5xph9eb4sinqo",
+        "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/kd7mxltgfdhbied1mzxr",
+      ];
+
+      // const poorSelectedImgUrl = "./assets/poorSelected.svg";
+      // const badSelectedImgUrl = "./assets/badSelected.svg";
+      // const avgSelectedImgUrl = "./assets/averageSelected.svg";
+      // const goodSelectedImgUrl = "./assets/goodSelected.svg";
+      // const excellentSelectedImgUrl = "./assets/excellentSelected.svg";
+
+      const idToIndexMap = {
+        poor: 0,
+        bad: 1,
+        average: 2,
+        good: 3,
+        excellent: 4,
+      };
+
+      let rating;
+      let feedback;
+
+      let imgElements = document.getElementsByClassName("ratingEmoji");
+
+      for (let i = 0; i < imgElements.length; i++) {
+        imgElements[i].addEventListener("click", (e) => {
+          console.log(`id is ${e.target.id}`);
+
+          rating = e.target.id;
+
+          let imgElements = document.getElementsByClassName("ratingEmoji");
+          for (let i = 0; i < imgElements.length; i++) {
+            imgElements[i].src = imgUrls[i];
+            console.log(`src is ${imgElements[i].src}`);
+          }
+
+          imgElements[idToIndexMap[e.target.id]].src =
+            selectedImgUrls[idToIndexMap[e.target.id]];
+
+          if (idToIndexMap[e.target.id] <= 2) {
+            document.getElementById("feedback").placeholder =
+              "Did you find any reports or features missing?";
+            document.getElementById("ratingMsg").textContent =
+              "Tell us what went wrong.";
+          } else {
+            document.getElementById("feedback").placeholder =
+              "Tell us about any new feature or report you would like";
+            document.getElementById("ratingMsg").textContent =
+              "How can we improve your experience?";
+          }
+        });
+      }
+
+      function onSubmit() {
+        let feedback = document.getElementById("feedback").value;
+        console.log(feedback);
+        console.log(rating);
+        console.log("Others");
+        console.log(window.parent.clevertap.event.push);
+        window.parent.clevertap.event.push("TEST_FEEDBACK_RATING_SUBMITTED", {
+          rating,
+          feedback,
+        });
+      }
+    </script>
+  </body>
+</html>
