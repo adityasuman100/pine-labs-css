@@ -90,8 +90,7 @@
         margin: 0;
       }
       .feedbackBodyP2 {
-        /* display: none; */
-        visibility: hidden;
+        display: block;
         font-family: Indivisible;
         font-size: 16px;
         font-weight: 400;
@@ -99,8 +98,7 @@
         margin: 0;
       }
       .textAreaDiv {
-        display: flex;
-        visibility: hidden;
+        display: block;
         justify-content: center;
         align-items: center;
       }
@@ -117,8 +115,7 @@
         color: #797979;
       }
       .buttonDiv {
-        display: flex;
-        visibility: hidden;
+        display: block;
         justify-content: center;
         align-items: center;
         padding: 12px 0 12px 0;
@@ -195,7 +192,14 @@
             <p>Excellent</p>
           </div>
         </div>
-        <p id="ratingMsg" class="feedbackBodyP2">
+        <div id="divToInsert"></div>
+      </div>
+    </div>
+    <script>
+      let feedbackClicked = false;
+      let isInserted = false;
+      const contentToInsert = `
+      <p id="ratingMsg" class="feedbackBodyP2">
           Tell us how can we improve your experience.
         </p>
         <div class="textAreaDiv">
@@ -208,17 +212,14 @@
         <div class="buttonDiv">
           <button class="feedbackButton" onclick="onSubmit()">Submit</button>
         </div>
-      </div>
-    </div>
-    <script>
-      let feedbackClicked = false;
+      `;
       console.log("*window width", window.innerWidth);
       console.log("*window height", window.innerHeight);
       setTimeout(() => {
         const cleverTap = window.parent.document.getElementById("wizParDiv0");
         if (cleverTap) {
           cleverTap.style.width = "30%";
-          cleverTap.style.overflow="visible";
+          cleverTap.style.overflow = "visible";
         } else {
           console.log("no element with id");
         }
@@ -240,6 +241,7 @@
         "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/jaclav9ziml3exduidqe",
         "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbba2svml4i2czincvu",
       ];
+
       const selectedImgUrls = [
         "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/czldxlmotbn0cocptth7",
         "https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/lqqacdovgeqn4uge1zdc",
@@ -262,18 +264,19 @@
       let imgElements = document.getElementsByClassName("ratingEmoji");
       for (let i = 0; i < imgElements.length; i++) {
         imgElements[i].addEventListener("click", (e) => {
+          if (isInserted == false) {
+            isInserted = true;
+            document.getElementById("divToInsert").innerHTML = contentToInsert;
+          }
           feedbackClicked = true;
           console.log(`id is ${e.target.id}`);
           const textAreaDiv = document.getElementsByClassName("textAreaDiv")[0];
-          // textAreaDiv.style.display = "flex";
-          textAreaDiv.style.visibility="visible";
+          textAreaDiv.style.display = "flex";
           const buttonDiv = document.getElementsByClassName("buttonDiv")[0];
-          // buttonDiv.style.display = "flex";
-          buttonDiv.style.visibility="visible";
+          buttonDiv.style.display = "flex";
           const feedbackBodyP2 =
             document.getElementsByClassName("feedbackBodyP2")[0];
-          // feedbackBodyP2.style.display = "block";
-          feedbackBodyP2.style.visibility="visible";
+          feedbackBodyP2.style.display = "block";
           rating = e.target.id;
           let imgElements = document.getElementsByClassName("ratingEmoji");
           for (let i = 0; i < imgElements.length; i++) {

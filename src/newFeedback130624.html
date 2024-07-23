@@ -36,100 +36,135 @@
           format("truetype");
       }
       .feedback {
-        width: fit-content;
+        width: 90%;
+        max-width: fit-content;
+        border-radius: 12px 12px 12px 12px;
+        font-family: Indivisible;
         box-shadow: 0px 30px 60px 0px #60606040;
         background: #ffffff;
       }
 
       .feedbackHeader {
-        height: 68px;
-        opacity: 0px;
-        background: #f5f5f5;
-        padding: 0 24px 0 24px;
+        font-family: Indivisible;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 2px;
+        opacity: 0px;
+        background: #f5f5f5;
+        padding: 0 1.25vw 0 1.25vw;
       }
-      .feedbackHeaderPtag {
+
+      .feedbackHeader p {
         font-family: Indivisible;
-        font-size: 17px;
+        font-size: 1.6vw;
         font-weight: 600;
-        line-height: 28px;
         text-align: left;
       }
-      .cross {
+
+      .feedbackHeader img {
         cursor: pointer;
+        width: 3vw;
+        height: 3vw;
       }
       .feedbackBody {
-        padding: 0 12px 0 12px;
-      }
-      .feedbackBodyP1 {
         font-family: Indivisible;
-        font-size: 16px;
+      }
+      .feedbackRating {
+        padding-left: 1.25vw;
+        padding-right: 1.25vw;
+        padding-bottom: 0.6vw;
+      }
+      .feedbackRating p {
+        font-family: Indivisible;
+        font-size: 1.4vw;
         font-weight: 400;
         text-align: left;
       }
+
       .feedbackBodyRating {
-        opacity: 0px;
+        flex-wrap: wrap;
         display: flex;
-        gap: 25px;
-        padding: 0 0 12px 0;
+        gap: 1.302vw;
+        padding-bottom: 3.333vw;
       }
       .emojiContainer {
+        font-family: Indivisible;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: fit-content;
-        gap: 10px;
+        gap: 0.521vw;
+      }
+      .emojiContainer img {
+        width: 5vw;
+        height: 5vw;
       }
       .ratingEmoji {
         cursor: pointer;
       }
       .emojiContainer > p {
         margin: 0;
-      }
-      .feedbackBodyP2 {
-        /* display: none; */
-        visibility: hidden;
         font-family: Indivisible;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 0 0 1rem 0;
-        margin: 0;
+      }
+      .feedbackTextarea {
+        display: none;
+        padding: 0 1.25vw;
+        font-family: Indivisible;
       }
       .textAreaDiv {
+        font-family: Indivisible;
         display: flex;
-        visibility: hidden;
         justify-content: center;
         align-items: center;
       }
-      .feedbackTextArea {
-        width: 90%;
-        height: 95px;
-        padding: 12px;
-      }
-      .feedbackTextArea::placeholder {
+      .textAreaDiv textarea {
         font-family: Indivisible;
-        font-size: 14px;
+        width: -webkit-fill-available;
+        height: 7vw;
+        padding: 0.625vw;
+        border: 0.052vw solid #cdcdcd;
+        border-radius: 0.625vw;
+      }
+
+      .textAreaDiv textarea::placeholder {
+        font-family: Indivisible;
+        font-size: 1vw;
         font-weight: 400;
         text-align: left;
         color: #797979;
       }
+      .feedbackTextarea p {
+        font-family: Indivisible;
+        font-size: 1.4vw;
+        font-weight: 400;
+        text-align: left;
+      }
       .buttonDiv {
+        font-family: Indivisible;
         display: flex;
-        visibility: hidden;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
-        padding: 12px 0 12px 0;
+        padding: 0.625vw 0 0.625vw 0;
+        gap: 0.625vw;
+      }
+      .buttonDiv button{
+        padding: 1vw 2vw;
+        font-size: 1.2vw;
       }
       .feedbackButton {
-        width: 50%;
-        height: 48px;
+        font-family: Indivisible;
         border-radius: 68px;
         background: #003323;
         color: white;
         cursor: pointer;
+        padding: 0.417vw 1.25vw;
+      }
+      .feedbackButtonChangeRating {
+        border: 0.104vw solid #003323;
+        border-radius: 68px;
+        
       }
     </style>
   </head>
@@ -145,80 +180,96 @@
         />
       </div>
       <div class="feedbackBody">
-        <p class="feedbackBodyP1">
-          How would you like to rate your experience?
-        </p>
-        <div class="feedbackBodyRating">
-          <div class="emojiContainer">
-            <img
-              class="ratingEmoji"
-              id="poor"
-              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/mhtkokghcbznhjwgob8u"
-              alt="rating"
-            />
-            <p>Poor</p>
-          </div>
-          <div class="emojiContainer">
-            <img
-              class="ratingEmoji"
-              id="bad"
-              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/qttdpzu8xaeidvhphie3"
-              alt="rating"
-            />
-            <p>Bad</p>
-          </div>
-          <div class="emojiContainer">
-            <img
-              class="ratingEmoji"
-              id="average"
-              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/ylvuuvdzsokpwh5kgdyd"
-              alt="rating"
-            />
-            <p>Average</p>
-          </div>
-          <div class="emojiContainer">
-            <img
-              class="ratingEmoji"
-              id="good"
-              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/jaclav9ziml3exduidqe"
-              alt="rating"
-            />
-            <p>Good</p>
-          </div>
-          <div class="emojiContainer">
-            <img
-              class="ratingEmoji"
-              id="excellent"
-              src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbba2svml4i2czincvu"
-              alt="rating"
-            />
-            <p>Excellent</p>
+        <div class="feedbackRating">
+          <p class="feedbackBodyP1">
+            How would you like to rate your experience?
+          </p>
+          <div class="feedbackBodyRating">
+            <div class="emojiContainer">
+              <img
+                class="ratingEmoji"
+                id="poor"
+                src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/mhtkokghcbznhjwgob8u"
+                alt="rating"
+              />
+              <p>Poor</p>
+            </div>
+            <div class="emojiContainer">
+              <img
+                class="ratingEmoji"
+                id="bad"
+                src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/qttdpzu8xaeidvhphie3"
+                alt="rating"
+              />
+              <p>Bad</p>
+            </div>
+            <div class="emojiContainer">
+              <img
+                class="ratingEmoji"
+                id="average"
+                src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/ylvuuvdzsokpwh5kgdyd"
+                alt="rating"
+              />
+              <p>Average</p>
+            </div>
+            <div class="emojiContainer">
+              <img
+                class="ratingEmoji"
+                id="good"
+                src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/jaclav9ziml3exduidqe"
+                alt="rating"
+              />
+              <p>Good</p>
+            </div>
+            <div class="emojiContainer">
+              <img
+                class="ratingEmoji"
+                id="excellent"
+                src="https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbba2svml4i2czincvu"
+                alt="rating"
+              />
+              <p>Excellent</p>
+            </div>
           </div>
         </div>
-        <p id="ratingMsg" class="feedbackBodyP2">
-          Tell us how can we improve your experience.
-        </p>
-        <div class="textAreaDiv">
-          <textarea
-            id="feedback"
-            class="feedbackTextArea"
-            placeholder="Suggest a feature here"
-          ></textarea>
-        </div>
-        <div class="buttonDiv">
-          <button class="feedbackButton" onclick="onSubmit()">Submit</button>
+
+        <div class="feedbackTextarea">
+          <p id="" class="">Tell us how can we improve your experience.</p>
+          <div class="textAreaDiv">
+            <textarea
+              id="feedback"
+              class=""
+              placeholder="Suggest a feature here"
+            ></textarea>
+          </div>
+          <div class="buttonDiv">
+            <button
+              id="changeRating"
+              class="feedbackButtonChangeRating"
+              onclick="onSubmit()"
+            >
+              Change Rating
+            </button>
+            <button class="feedbackButton" onclick="onSubmit()">Submit</button>
+          </div>
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script>
       let feedbackClicked = false;
+      console.log("*window width", window.innerWidth);
+      console.log("*window height", window.innerHeight);
+      window.innerWidth = "1440px";
+      window.innerHeight = "665px";
       console.log("*window width", window.innerWidth);
       console.log("*window height", window.innerHeight);
       setTimeout(() => {
         const cleverTap = window.parent.document.getElementById("wizParDiv0");
         if (cleverTap) {
           cleverTap.style.width = "30%";
-          cleverTap.style.overflow="visible";
+          cleverTap.style.overflow = "visible";
+          cleverTap.style.right = "0%";
         } else {
           console.log("no element with id");
         }
@@ -259,21 +310,21 @@
       };
       let rating;
       let feedback;
+      document.getElementById("changeRating").addEventListener("click", (e) => {
+        document.getElementsByClassName("feedbackTextarea")[0].style.display =
+          "none";
+        document.getElementsByClassName("feedbackRating")[0].style.display =
+          "block";
+      });
       let imgElements = document.getElementsByClassName("ratingEmoji");
       for (let i = 0; i < imgElements.length; i++) {
         imgElements[i].addEventListener("click", (e) => {
           feedbackClicked = true;
           console.log(`id is ${e.target.id}`);
-          const textAreaDiv = document.getElementsByClassName("textAreaDiv")[0];
-          // textAreaDiv.style.display = "flex";
-          textAreaDiv.style.visibility="visible";
-          const buttonDiv = document.getElementsByClassName("buttonDiv")[0];
-          // buttonDiv.style.display = "flex";
-          buttonDiv.style.visibility="visible";
-          const feedbackBodyP2 =
-            document.getElementsByClassName("feedbackBodyP2")[0];
-          // feedbackBodyP2.style.display = "block";
-          feedbackBodyP2.style.visibility="visible";
+          document.getElementsByClassName("feedbackRating")[0].style.display =
+            "none";
+          document.getElementsByClassName("feedbackTextarea")[0].style.display =
+            "block";
           rating = e.target.id;
           let imgElements = document.getElementsByClassName("ratingEmoji");
           for (let i = 0; i < imgElements.length; i++) {

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: Indivisible;
+            font-weight: 300;
+            src: url('https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-Light.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: Indivisible;
+            font-weight: 400;
+            src: url('https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-Regular.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: Indivisible;
+            font-weight: 500;
+            src: url('https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-Medium.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: Indivisible;
+            font-weight: 600;
+            src: url('https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-SemiBold.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: Indivisible;
+            font-weight: 700;
+            src: url('https://d33uwmu0lkoags.cloudfront.net/web/assets/fonts/Indivisible-Bold.ttf')format('truetype');
+        }
+
+        .feedback {
+            width: fit-content;
+            box-shadow: 0px 30px 60px 0px #60606040;
+            background: #ffffff;
+        }
+
+        .feedbackHeader {
+            height: 68px;
+            opacity: 0px;
+            background: #f5f5f5;
+            padding: 0 24px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feedbackHeaderPtag {
+            font-family: Indivisible;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 28px;
+            text-align: left;
+        }
+
+        .cross {
+            cursor: pointer;
+        }
+
+        .feedbackBody {
+            padding: 0 12px 0 12px;
+        }
+
+        .feedbackBodyP1 {
+            font-family: Indivisible;
+            font-size: 16px;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        .feedbackBodyRating {
+            opacity: 0px;
+            display: flex;
+            gap: 25px;
+            padding: 0 0 12px 0;
+        }
+
+        .emojiContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            gap: 10px;
+        }
+
+        .ratingEmoji {
+            cursor: pointer;
+        }
+
+        .emojiContainer>p {
+            margin: 0;
+        }
+
+        .feedbackBodyP2 {
+            visibility: hidden;
+            font-family: Indivisible;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 0 0 1rem 0;
+            margin: 0;
+        }
+
+        .textAreaDiv {
+            display: flex;
+            visibility: hidden;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feedbackTextArea {
+            width: 90%;
+            height: 95px;
+            padding: 12px;
+        }
+
+        .feedbackTextArea::placeholder {
+            font-family: Indivisible;
+            font-size: 14px;
+            font-weight: 400;
+            text-align: left;
+            color: #797979;
+        }
+
+        .buttonDiv {
+            display: flex;
+            visibility: hidden;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 0 12px 0;
+        }
+
+        .feedbackButton {
+            width: 50%;
+            height: 48px;
+            border-radius: 68px;
+            background: #003323;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="feedback">
+        <div class="feedbackHeader">
+            <p class="feedbackHeaderPtag">Help us improve One web for you</p>
+            <imgonclick="closeFeedbackModal()"class="cross"src="https:
+                //res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/lfqwxqx6anoerllchwns"alt="cross" />
+        </div>
+        <div class="feedbackBody">
+            <p class="feedbackBodyP1">How would you like to rate your experience?</p>
+            <div class="feedbackBodyRating">
+                <div class="emojiContainer">
+                    <imgclass="ratingEmoji"id="poor"src="https:
+                        //res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/mhtkokghcbznhjwgob8u"alt="rating" />
+                    <p>Poor</p>
+                </div>
+                <div class="emojiContainer">
+                    <imgclass="ratingEmoji"id="bad"src="https:
+                        //res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/qttdpzu8xaeidvhphie3"alt="rating" />
+                    <p>Bad</p>
+                </div>
+                <div class="emojiContainer">
+                    <imgclass="ratingEmoji"id="average"src="https:
+                        //res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/ylvuuvdzsokpwh5kgdyd"alt="rating" />
+                    <p>Average</p>
+                </div>
+                <div class="emojiContainer">
+                    <imgclass="ratingEmoji"id="good"src="https:
+                        //res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/jaclav9ziml3exduidqe"alt="rating" />
+                    <p>Good</p>
+                </div>
+                <div class="emojiContainer">
+                    <imgclass="ratingEmoji"id="excellent"src="https:
+                        //res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbba2svml4i2czincvu"alt="rating" />
+                    <p>Excellent</p>
+                </div>
+            </div>
+            <p id="ratingMsg" class="feedbackBodyP2">Tell us how can we improve your experience.</p>
+            <div class="textAreaDiv">
+                <textareaid="feedback"class="feedbackTextArea"placeholder="Suggest a feature here"></textarea>
+            </div>
+            <div class="buttonDiv"><button class="feedbackButton" onclick="onSubmit()">Submit</button></div>
+        </div>
+    </div>
+    <script>let feedbackClicked = false; console.log('*window width', window.innerWidth); console.log('*window height', window.innerHeight); setTimeout(() => { const cleverTap = window.parent.document.getElementById('wizParDiv0'); if (cleverTap) { cleverTap.style.width = '30%'; cleverTap.style.overflow = 'visible'; } else { console.log('no element with id'); } const iframes = window.parent.document.getElementsByTagName('iframe'); if (iframes.length > 0) { const iframe = iframes[0]; iframe.style.position = 'absolute'; } else { console.log('length of iframe', iframes.length); } }, 0); console.log('in script tag'); const imgUrls = ['https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/mhtkokghcbznhjwgob8u', 'https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/qttdpzu8xaeidvhphie3', 'https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/ylvuuvdzsokpwh5kgdyd', 'https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/jaclav9ziml3exduidqe', 'https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbba2svml4i2czincvu',]; const selectedImgUrls = ['https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/czldxlmotbn0cocptth7', 'https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/lqqacdovgeqn4uge1zdc', 'https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/dvbqoako3jaqtn3up0ml', 'https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/pxrzn5b5xph9eb4sinqo', 'https://res.cloudinary.com/dydjlcd5q/image/upload/f_auto,q_auto/v1/pinelabs/kd7mxltgfdhbied1mzxr',]; console.log('imgUrls', imgUrls); console.log('selectedImgUrls', selectedImgUrls); const idToIndexMap = { poor: 0, bad: 1, average: 2, good: 3, excellent: 4, }; let rating; let feedback; let imgElements = document.getElementsByClassName('ratingEmoji'); for (let i = 0; i < imgElements.length; i++) { imgElements[i].addEventListener('click', (e) => { feedbackClicked = true; console.log(`id is ${e.target.id}`); const textAreaDiv = document.getElementsByClassName('textAreaDiv')[0]; textAreaDiv.style.visibility = 'visible'; const buttonDiv = document.getElementsByClassName('buttonDiv')[0]; buttonDiv.style.visibility = 'visible'; const feedbackBodyP2 = document.getElementsByClassName('feedbackBodyP2')[0]; feedbackBodyP2.style.visibility = 'visible'; rating = e.target.id; let imgElements = document.getElementsByClassName('ratingEmoji'); for (let i = 0; i < imgElements.length; i++) { imgElements[i].src = imgUrls[i]; console.log(`src is ${imgElements[i].src}`); } imgElements[idToIndexMap[e.target.id]].src = selectedImgUrls[idToIndexMap[e.target.id]]; if (idToIndexMap[e.target.id] <= 2) { document.getElementById('feedback').placeholder = 'Did you find any reports or features missing?'; document.getElementById('ratingMsg').textContent = 'Tell us what went wrong.'; } else { document.getElementById('feedback').placeholder = 'Tell us about any new feature or report you would like'; document.getElementById('ratingMsg').textContent = 'How can we improve your experience?'; } }); } function onSubmit() { let feedback = document.getElementById('feedback').value; console.log(feedback); console.log(rating); console.log('Others'); console.log(window.parent.clevertap.event.push); window.parent.clevertap.event.push('TEST_FEEDBACK_RATING_SUBMITTED', { rating, feedback, }); } function closeFeedbackModal() { const feedbackModal = window.parent.document.getElementById('wizParDiv0'); if (feedbackModal) { setTimeout(() => { if (feedbackClicked) { let feedback = document.getElementById('feedback').value; console.log(feedback); console.log(rating); console.log('Others'); console.log(window.parent.clevertap.event.push); window.parent.clevertap.event.push('TEST_FEEDBACK_RATING_SUBMITTED', { rating, feedback }); feedbackModal.remove(); console.log('modal removed'); } else { feedbackModal.remove(); console.log('modal removed'); } }, 0); } else { console.log('no element with id wizParDiv0'); } }</script>
+</body>
+
+</html>
